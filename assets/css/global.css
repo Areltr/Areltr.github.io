@@ -3,19 +3,66 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    
+}
+:root{
+    scroll-behavior: smooth;
+    --warna1: #242424;
+    --warna2: #f0f0f0;
+}
+.game{
+    display: flex;
+    width: 10px;
+    gap: 1rem;
+}
+.item img {
+    width: 100px;
+}
+.item h1 {
+    font-size: 20px;
+}
+.listgame{
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-color: transparent transparent;
+    background: #c4e2ff;
+}
+.ppp1{
+    color: #000000
+}
+.aww{
+    background: #280041;
+}
+.aww h2{
     font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    padding: 5px 0;
+    text-align: center;
+}
+.aww p{
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px 0;
+    text-align: center;
+}
+.game::-webkit-scrollbar{
+    display: none;
 }
 .nav{
-    background-color: #5c539d;
+    background-color: #ffffff;
     width: 100%;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .nav .logo{
-    color: #fff;
+    color: #242424;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -29,7 +76,7 @@
 }
 .navmenu li a{
     font-size: 18px;
-    color: #fff;
+    color: #242424;
     text-decoration: none;
     padding: 0px 16px;
     height: 100%;
@@ -38,7 +85,7 @@
     transition: 0.3 ease;
 }
 .navmenu li a:hover{
-    background-color: #7c73be;
+    background-color: #b8b8b8;
 }
 .nav-search input{
     font-size: 16px;
@@ -46,11 +93,10 @@
     border: none;
     border-radius: 4px;
 }
-.nav-toggle .bar{
+.nav-toggle .bar img{
     display: block;
     width: 25px;
-    height: 3px;
-    background-color: #ffffff;
+    height: 25px;
     margin: 5px auto;
     
 }
@@ -90,7 +136,7 @@
     align-items: left;
 }
 .container{
-    background: #7c73be;
+    background: #11001e;
 }
 .container button{
     align-items: center;
@@ -105,19 +151,21 @@
 .container1{
     width: 100%;
     min-height: 100vh;
-    background:black;
+    background:#11001e;
 }
 .container h1 {
-    color: #fff;
+    color: #070505;
     font-size: 40px;
     padding: 5px 0;
     text-align: center;
+    font-family: 'Poppins',sans-serif;
 }
 .container h2 {
-    color: #fff;
+    color: #ffffff;
     font-size: 40px;
     padding: 5px 0;
     text-align: center;
+    font-family: 'Poppins',sans-serif;
 }
 .container p {
     color: #fff;
@@ -149,6 +197,92 @@
     padding: 50px 0;
     text-align: center;
 }
+
+/* dropdown mata uang */
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown button{
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #dd00f1;
+    border: 1px solid #b8b8b8;
+    color: #b8b8b8;
+    transition: background 0.5s;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #dd00f1;
+    min-width: 100px;
+    z-index: 1;
+}
+.dropdown-content button{
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+.dropdown-content button:hover{
+    background-color: #001b55;
+}
+.dropdown.show .dropdown-content{
+    display: block;
+}
+.dropdown button:hover{
+    background:transparent ;
+}
+/* dropdown mata uang selesai */
+
+/* dropdown kategori paket */
+.dropdown2{
+    position: relative;
+    display: inline-block;
+}
+.dropdown2 button{
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #dd00f1;
+    border: 1px solid #b8b8b8;
+    color: #b8b8b8;
+    transition: background 0.5s;
+}
+.dropdown-content2{
+    display: none;
+    position: absolute;
+    background-color: #dd00f1;
+    min-width: 150px;
+    z-index: 1;
+}
+.dropdown-content2 button{
+    background: none;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+.dropdown-content2 button:hover{
+    background: #dd00f1;
+}
+.dropdown2.show .dropdown-content2{
+    display: block;
+}
+.content{
+    display: none;
+}
+.content.active{
+    display: block;
+}
+.dropdown2 button:hover{
+    background: transparent;
+}
+/* dropdown kategori paket selesai */
 .card-a{
     left: -100%;
 }
@@ -166,7 +300,7 @@
     left: -100%;
 }
 .card-b{
-    background: #5c539d;
+    background: #280041;
     padding: 10% 5%;
     border-radius: 15px;
     color: #fff;
@@ -229,17 +363,17 @@
 .card-b button{
     width: 100%;
     padding: 14px 0;
-    background: transparent;
+    background: #dd00f1;
     color: #fff;
     font-size: 15px;
-    border: 1px solid #e33058;
+    border: 1px solid #b8b8b8;
     border-radius: 6px;
     margin-top: 30px;
     cursor: pointer;
     transition: background 0.5s;
 }
 .card-b button:hover{
-    background: #e33058;
+    background: transparent;
 }
 .wrapper::-webkit-scrollbar{
     width: 0;
@@ -257,6 +391,9 @@
     text-align: center;
     background: #5c539d;
     margin: 1px 1px;
+}
+.card-b ul h2{
+    color: #fff;
 }
 .footer{
     text-align: center;
@@ -280,7 +417,7 @@
     position: absolute;
     top: 80px;
     left: -100%;
-    background-color: #8c85c2;
+    background-color: #ffffff;
     transition: all 0.5 ease;
 }
 .navmenu.active{
@@ -289,6 +426,9 @@
 .nav-toggle{
     width: 5%;
     height: 40%;
+}
+.aww p{
+    font-size: 10px;
 }
 .container h1{
     font-size: 30px;
@@ -310,7 +450,7 @@
 }
 .container h2{
     padding: 20px 0px 10px;
-    color: #fff;
+    color:#ffffff;
     text-align: center;
 }
 .container1 p{
